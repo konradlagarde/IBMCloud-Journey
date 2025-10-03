@@ -1,1 +1,28 @@
-Hello
+<script>
+window.wxOConfiguration = {
+                    orchestrationID: 
+"20250306-0917-2112-60db-f92bd41c3fcb_20250703-2028-3097-9095-6c7fa2ae40c7",
+                    hostURL: "https://cio.watson-orchestrate.ibm.com",
+                    rootElementID: "root",
+                    showLauncher: false,
+                    chatOptions: {
+            agentId: "4e0345eb-7a54-4de8-b5e3-6976f9a9f514",
+            agentEnvironmentId: "91daf5d4-ed80-46a7-ac5c-f5665c17f088"
+        },
+         layout: {
+            form: "fullscreen-overlay",        // Options: float | custom | fullscreen-overlay - if not specified float is default
+            showOrchestrateHeader: true,       // Optional: shows top agent header bar 
+            width: '1024px',                    // Optional: honoured when form is float only
+            height: '800px',                 // Optional: honoured when form is float only
+            }
+                };
+
+                setTimeout(function () {
+                    const script = document.createElement('script');
+                    script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
+                    script.addEventListener('load', function () {
+                        wxoLoader.init();
+                    });
+                    document.head.appendChild(script);
+                }, 0);
+            </script>
